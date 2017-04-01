@@ -1,0 +1,31 @@
+body {
+	background-color: turquoise;
+}
+
+p {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: darkblue;
+}
+
+span.hidden-message{
+  opacity: 0.0;
+}
+span.shown-message{
+  opacity: 1.0;
+}
+#nextButton {
+		padding-top: 20px;
+		padding-left: 4px;
+}
+
+.examples {
+	padding-top: 100px;
+}
+
+.questionNumber {
+	padding-top: 100px;
+}
+
+.answerBox {
+	width: 4em;
+}
