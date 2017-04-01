@@ -20,9 +20,9 @@ function checkAnswer(solution) {
   }	
 //if answer = solution, tell user they're correct and add a point to score
 	if (answer == solution) {
-		totalScore = Number(getCookie("correctAnswers"));
-		totalScore+=1;
-		setCookie("correctAnswers", totalScore, 1);
+//		totalScore = Number(getCookie("correctAnswers"));
+//		totalScore+=1;
+//		setCookie("correctAnswers", totalScore, 1);
 		document.getElementById("correctOrNot").innerHTML="That is correct.";
 		document.getElementById("correctOrNot").classList.remove("hidden-message");
 		document.getElementById("correctOrNot").classList.add("shown-message");
@@ -34,10 +34,18 @@ function checkAnswer(solution) {
 	}
 }
 
+function submitAnswer() {
+	if (document.getElementById("correctOrNot").innerHTML == "That is correct.") {
+		totalScore = Number(getCookie("correctAnswers"));
+		totalScore+=1;
+		setCookie("correctAnswers", totalScore, 1);
+	}
+}
+
 //define function to calculate and show percentage result
 function calculateResults() {
 	var result = Number(getCookie("correctAnswers")) * 100 / 3.0;
-	document.getElementById("results").innerHTML=result + " % Correct";
+	document.getElementById("results").innerHTML=result.toFixed(2) + " % Correct";
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
